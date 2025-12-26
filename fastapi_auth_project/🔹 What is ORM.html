@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🔹 What is ORM</title>
+  </head>
+  <body>
+    <h1>🔹 What is ORM?</h1>
+    <ul>
+      <li>
+        <pre>
+🔹 What is ORM?
+
+ORM = Object Relational Mapping
+
+👉 It lets you work with a database using Python objects instead of SQL queries.
+
+Instead of writing raw SQL like:
+
+SELECT * FROM users WHERE email = 'bhavesh@example.com';
+
+
+You write Python code:
+
+user = db.query(User).filter(User.email == "bhavesh@example.com").first()
+
+
+ORM automatically converts this Python code into SQL.
+
+✅ What is ORM?
+
+ORM = Object Relational Mapping
+
+It is a way to work with database tables using Python classes instead of SQL queries.
+
+🔹 Without ORM (Raw SQL)
+INSERT INTO users (name, email, password)
+VALUES ('Bhavesh', 'bhavesh@example.com', '1234');
+
+
+You must:
+
+Write SQL manually
+
+Handle table structure
+
+Handle SQL injection
+
+Convert rows → objects yourself
+
+🔹 With ORM (SQLAlchemy)
+user = User(
+    name="Bhavesh",
+    email="bhavesh@example.com",
+    password="1234"
+)
+db.add(user)
+db.commit()
+
+
+✔ Clean
+✔ Safe
+✔ Pythonic
+✔ Easy to maintain
+
+
+🔹 Why ORM Exists (Problem it Solves)
+❌ Without ORM (Raw SQL)
+cursor.execute(
+    "INSERT INTO users (name, email, password) VALUES (%s, %s, %s)",
+    ("Bhavesh", "bhavesh@example.com", "hashedpass")
+)
+
+
+Problems:
+
+Hard to read
+
+Database-specific SQL
+
+Easy to make SQL injection mistakes
+
+Hard to maintain
+
+✅ With ORM
+user = User(
+    name="Bhavesh",
+    email="bhavesh@example.com",
+    password="hashedpass"
+)
+db.add(user)
+db.commit()
+
+
+✔ Cleaner
+✔ Safer
+✔ Easier to maintain
+✔ Database-independent
+
+🔹 ORM in Your FastAPI Project (Real Example)
+📁 models.py
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(100))
+    email = Column(String(100), unique=True)
+    password = Column(String(255))
+
+
+👉 This Python class represents a database table.
+
+Python	Database
+Class	Table
+Object	Row
+Attribute	Column
+📁 Create user (ORM way)
+new_user = User(
+    name=user.name,
+    email=user.email,
+    password=hash_password(user.password)
+)
+db.add(new_user)
+db.commit()
+
+
+ORM converts this to:
+
+INSERT INTO users (name, email, password)
+VALUES ('Bhavesh', 'bhavesh@example.com', 'hashed');
+
+📁 Read user
+user = db.query(User).filter(User.email == email).first()
+
+
+ORM converts to:
+
+SELECT * FROM users WHERE email = 'bhavesh@example.com' LIMIT 1;
+
+🔹 ORM vs SQL (Quick Comparison)
+Feature	ORM	Raw SQL
+Learning curve	Easy	Hard
+Security	High	Risky
+Readability	Clean	Messy
+DB portability	Yes	No
+Maintenance	Easy	Hard
+🔹 Popular ORMs in Python
+ORM	Used With
+SQLAlchemy	FastAPI (most popular)
+Django ORM	Django
+Peewee	Small apps
+Tortoise ORM	Async FastAPI
+
+👉 You are using SQLAlchemy ORM.
+
+🔹 ORM in Simple Words (Interview Answer)
+
+ORM is a technique that lets developers interact with a database using programming language objects instead of writing SQL queries directly.
+
+🔹 Do You Always Need ORM?
+
+❌ No
+✅ But for backend apps, authentication systems, APIs → ORM is best practice
+
+🚀 You Already Know ORM!
+
+You have already:
+
+Created models ✅
+
+Inserted users ✅
+
+Queried users ✅
+
+Updated data ✅
+
+You’re officially using ORM 👏
+    </pre
+        >
+      </li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>🚀 FASTAPI AUTH + IMAGE UPLOAD PROJECT</h1>
+    <ul>
+      <li>
+        <pre>
+✅ Tech Stack
+
+FastAPI
+
+JWT Authentication
+
+SQLAlchemy ORM
+
+MySQL / SQLite
+
+Password Hashing
+
+File Upload
+
+Pydantic
+
+Swagger UI
+
+    </pre
+        >
+      </li>
+      <li><h1>📁 Project Structure</h1></li>
+      <li>
+        <pre>
+fastapi_auth_project/
+│
+├── app/
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── schemas.py
+│   ├── auth.py
+│   ├── upload.py
+│   ├── config.py
+│
+├── uploads/
+│
+├── requirements.txt
+└── run.py
+
+<h2>✅ Why You MUST Use Virtual Environment (venv)</h2>
+1️⃣ Avoid Package Conflicts
+
+Without venv:
+
+One project installs FastAPI 0.110
+
+Another project needs FastAPI 0.95
+
+💥 Everything breaks
+
+With venv:
+✔ Each project has its own dependencies
+✔ No conflicts
+✔ Safe upgrades
+
+2️⃣ Production Standard
+
+Every real-world project uses:
+
+venv OR
+
+poetry OR
+
+pipenv OR
+
+docker
+
+👉 Never global install in production
+
+3️⃣ Clean Project Structure
+project/
+│
+├── venv/
+├── app/
+├── requirements.txt
+└── main.py
+
+Anyone can run it with:
+pip install -r requirements.txt
+
+<h2>Step 1: Create venv</h2>
+python -m venv venv
+
+<h2>Step 2: Activate</h2>
+Windows:-
+venv\Scripts\activate
+
+
+
+<h2>1️⃣ Install Dependencies</h2>
+<!-- pip install fastapi uvicorn sqlalchemy pymysql python-jose passlib bcrypt python-multipart -->
+
+pip install fastapi uvicorn sqlalchemy pymysql pydantic-settings python-multipart passlib[bcrypt] python-jose
+pip install "pydantic[email]"
+
+<!--  used in this project - 👉 STOP using bcrypt 🔹 Step 1: Remove broken packages pip uninstall passlib bcrypt -y
+
+install correct pakcage - pip install passlib[argon2]
+
+-->
+Option 2: Use argon2 instead of bcrypt
+pip install passlib[argon2]
+Argon2 has no 72-byte limitation and is more secure.
+Update auth.py:
+from passlib.context import CryptContext
+pwd_context = CryptContext(schemes=["argon2"], deprecated="auto")
+
+Everything else stays the same.
+
+No need to truncate passwords.
+
+<h1>THE ONLY CLEAN & CORRECT FIX (DO THIS)</h1>
+⚠️ Do NOT try to fix this inside the same venv. It will keep breaking.
+✅ STEP 1 — Close Everything
+
+Close VS Code
+
+Close PowerShell
+
+Make sure no uvicorn process is running
+
+✅ STEP 2 — DELETE THE VENV COMPLETELY
+Go to: D:\All Learning\PYTHON_LEARNING\first_setup\fastapi_auth_project\
+
+❌ Delete this folder manually: venv/
+
+✅ STEP 3 — Recreate Virtual Environment (Clean)
+Open PowerShell as Administrator
+cd "D:\All Learning\PYTHON_LEARNING\first_setup\fastapi_auth_project"
+
+python -m venv venv
+venv\Scripts\activate
+
+You should see: (venv)
+
+✅ STEP 4 — Install ONLY Required Packages
+pip install fastapi uvicorn sqlalchemy pymysql python-dotenv passlib[argon2]
+pip install fastapi uvicorn sqlalchemy pymysql python-dotenv passlib[argon2] python-multipart email-validator python-jose
+pip install pydantic-settings
+
+✅ Verify Everything Installed
+pip list
+
+
+✅ STEP 5 — Confirm Installation
+python -c "from passlib.context import CryptContext; print('OK')"
+If you see: OK → You are good
+
+<h2>2️⃣ config.py</h2>
+from pydantic import BaseSettings
+
+class Settings(BaseSettings):
+    SECRET_KEY = "supersecret"
+    ALGORITHM = "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES = 60
+
+    DB_URL = "mysql+pymysql://root:password@localhost/fastapi_db"
+
+settings = Settings()
+
+
+<h1>Run Project</h1>
+uvicorn app.main:app --reload
+
+      </pre>
+      </li>
+    </ul>
+  </body>
+</html>

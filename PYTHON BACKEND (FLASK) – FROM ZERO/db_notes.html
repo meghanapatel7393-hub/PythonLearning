@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+PART 1: Install MySQL on Windows (64-bit)
+Step 1: Download MySQL Installer
+
+Go to MySQL official website
+
+Download MySQL Installer for Windows
+
+Choose:
+
+mysql-installer-community (recommended)
+
+👉 This installer includes:
+
+MySQL Server
+
+MySQL Workbench
+
+Connectors
+
+Step 2: Run the Installer
+
+Double-click the installer
+
+Choose setup type:
+✅ Developer Default (BEST for Python developers)
+
+Click Next → Execute
+
+Step 3: MySQL Server Configuration
+
+When configuration starts:
+
+1️⃣ Server Type
+
+Choose: Development Computer
+
+2️⃣ Connectivity
+
+Port: 3306 (default – keep it)
+
+Open firewall: ✅ checked
+
+3️⃣ Authentication
+
+Choose: Use Strong Password Encryption
+
+Step 4: Set Root Password
+
+Set root password (IMPORTANT – remember it)
+
+You may skip adding extra users for now
+
+Click Next → Execute → Finish
+
+Step 5: Verify MySQL Installation
+
+Open MySQL Workbench
+
+Click on Local instance MySQL
+
+Enter root password
+
+If it opens → ✅ MySQL is installed correctly
+
+PART 2: Add MySQL to Windows PATH (Important)
+Step 6: Add MySQL to PATH
+
+Search Environment Variables
+
+Open Edit system environment variables
+
+Click Environment Variables
+
+Under System Variables → Path → Edit
+
+Add this (example):
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+
+Click OK → Restart Command Prompt
+
+Step 7: Test MySQL in Command Prompt
+mysql -u root -p
+
+
+Enter your password
+
+If you see:
+
+mysql>
+
+
+✅ MySQL is working
+
+PART 3: Install MySQL Connector for Python
+Step 8: Activate Your Python Virtual Environment
+
+(You already use venv 👍)
+
+cd your_project
+venv\Scripts\activate
+
+Step 9: Install MySQL Connector
+pip install mysql-connector-python
+
+
+Verify:
+
+pip show mysql-connector-python
+
+PART 4: Connect MySQL with Python
+Step 10: Create Database in MySQL
+
+In MySQL Workbench or cmd:
+
+CREATE DATABASE python_db;
+USE python_db;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100)
+);
+
+Step 11: Python MySQL Connection Code
+
+Create db.py 👇
+
+import mysql.connector
+
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="YOUR_PASSWORD",
+    database="python_db"
+)
+
+cursor = db.cursor()
+
+cursor.execute("SELECT DATABASE()")
+print("Connected to:", cursor.fetchone())
+
+
+Run:
+
+python db.py
+
+
+Output:
+
+Connected to: ('python_db',)
+
+
+✅ SUCCESS
+
+PART 5: Insert & Fetch Data (Example)
+sql = "INSERT INTO users (name, email) VALUES (%s, %s)"
+values = ("Meghana", "meghana@gmail.com")
+
+cursor.execute(sql, values)
+db.commit()
+
+print("Data inserted!")
+
+
+Fetch data:
+
+cursor.execute("SELECT * FROM users")
+for row in cursor.fetchall():
+    print(row)
+
+Common Errors & Fixes
+❌ mysql command not found
+
+✔ MySQL bin path not added → recheck PATH
+
+❌ Access denied for user 'root'
+
+✔ Wrong password → reset from MySQL Installer
+
+❌ Module not found
+
+✔ Install inside correct venv
+
+Recommended Next Steps (For You)
+
+Since you’re learning Flask & backend:
+
+Connect Flask + MySQL
+
+Use ORM (SQLAlchemy)
+
+Build Login / Register system
+
+If you want, I can:
+
+Connect Flask + MySQL
+
+Explain SQLAlchemy
+
+Design real project DB structure
+
+Just tell me 👍
+
+  </pre
+    >
+  </body>
+</html>

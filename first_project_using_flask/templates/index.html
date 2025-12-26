@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My First Flask App</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <!-- 
+  {{ url_for('static', filename='style.css') }}
+
+  ➡️ This is Jinja syntax (Flask template language) 
+  ➡️ Flask safely connects static files-->
+
+  <body>
+    <h1>🎉 Welcome to My First Flask App</h1>
+    <p>This page is rendered using Flask + HTML.</p>
+  </body>
+</html>

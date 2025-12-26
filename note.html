@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Learning</title>
+  </head>
+  <body>
+    <h1>🧩 Step 1: What is Python?</h1>
+    <ul>
+      <li>
+        <pre>
+Python is:
+
+A high-level programming language
+
+Easy to read & write
+
+Used for:
+
+Web development 🌐
+
+Data science 📊
+
+Automation 🤖
+
+AI & Machine Learning 🧠
+
+Backend APIs (like Node.js)
+
+    </pre
+        >
+      </li>
+    </ul>
+    <h1>🛠 Step 2: Install Python (Windows)</h1>
+    <ul>
+      <li>
+        <pre>
+Go to python.org
+
+Download Python 3.x
+
+During installation:
+✅ Check “Add Python to PATH”
+
+Finish installation
+
+Verify installation:
+
+Open Command Prompt and type: python --version
+
+
+    </pre
+        >
+      </li>
+    </ul>
+    <h1>✍️ Step 3: Your First Python Program</h1>
+    <ul>
+      <li>
+        <pre>
+Create a file called:
+first.py
+
+
+Write this:
+print("Hello, Python!")
+
+
+Run it:
+python first.py
+
+
+🎉 Congratulations! You wrote your first Python program.
+      </pre
+        >
+      </li>
+    </ul>
+
+    <h1>🔢 Step 4: Variables & Data Types</h1>
+    <ul>
+      <li>
+        <pre>
+name = "Meghana"
+age = 22
+height = 5.4
+is_student = True
+
+print(name)
+print(age)
+
+
+    </pre
+        >
+      </li>
+    </ul>
+    <h1>⌨️ Step 5: Input from User</h1>
+    <ul>
+      <li>
+        <pre>
+name = input("Enter your name: ")
+print("Welcome,", name)
+
+name = input("Enter your name: ")
+age = input("Enter your age: ")
+
+print("My name is", name)
+print("My age is", age)
+
+
+</pre
+        >
+      </li>
+    </ul>
+    <h1>🧰 Essential Tools for Python Project Development</h1>
+    <ul>
+      <li>
+        <pre>
+<h2>✅ 1. Python (Required)</h2>
+<ul><li><pre>
+You already need this.
+Check installation
+python --version
+
+If not installed → download from python.org
+</pre></li>
+</ul>
+<h2>💻 2. Code Editor / IDE (Very Important)</h2>
+<ul><li><pre>
+<h3>⭐ Best Option (Recommended)</h3>
+
+VS Code
+
+Why?
+
+Lightweight
+
+Best for beginners + professionals
+
+Supports Python, Web, Data Science
+
+Setup VS Code
+
+Download Visual Studio Code
+
+Install
+
+Open VS Code
+
+Install extensions:
+
+🔹 Python (by Microsoft)
+
+🔹 Pylance
+
+🔹 Python Debugger
+
+</pre></li></ul>
+    </pre>
+      </li>
+    </ul>
+
+    <ul>
+      <li><h1>🧪 3. Virtual Environment (Must Learn)</h1></li>
+      <ul>
+        <li>
+          <pre>
+Virtual environment keeps project dependencies separate.
+
+Create Virtual Environment
+python -m venv venv
+
+Activate it
+Windows : venv\Scripts\activate
+Mac/Linux : source venv/bin/activate
+
+You’ll see:
+(venv) [root@localhost ~]#
+
+<h2>📦 4. Package Manager – pip</h2>
+Used to install libraries.
+pip install requests
+pip install flask
+
+
+Save dependencies:
+pip freeze > requirements.txt
+
+Install later:
+pip install -r requirements.txt
+
+
+<h1>🧩 5. Project Folder Structure (Standard)</h1>
+python-project/
+│
+├── venv/
+├── src/
+│   └── main.py
+├── requirements.txt
+├── .gitignore
+└── README.md
+
+
+<h1>🔄 6. Git & GitHub (Highly Recommended)</h1>
+Install Git
+Check:
+git --version
+
+
+Basic commands:
+git init
+git add .
+git commit -m "Initial commit"
+
+
+Use GitHub to store & share projects.
+
+<h1>🐞 7. Debugging & Formatting Tools</h1>
+Auto Formatter
+
+pip install black
+
+Run:
+black .
+
+
+Linting
+pip install flake8
+
+
+<h1>🌐 8. Frameworks (Based on Project Type)</h1>
+| Project Type | Tool                |
+| ------------ | ------------------- |
+| Web App      | Flask / Django      |
+| API          | FastAPI             |
+| Automation   | Selenium            |
+| Data Science | Pandas, NumPy       |
+| ML           | TensorFlow, PyTorch |
+
+
+<h1>🧪 9. Testing Tools (Optional for Beginner)</h1>
+pip install pytest
+
+
+<h1>🧠 Recommended Beginner Stack (Perfect Setup)</h1>
+✔ Python
+✔ VS Code
+✔ Virtual Environment
+✔ pip
+✔ Git
+✔ Flask (for first project)
+
+
+        </pre>
+        </li>
+      </ul>
+    </ul>
+    <ul>
+      <li><h1>📘 Lesson 7: Taking Input from User</h1></li>
+      <ul>
+        <li>
+          <pre>
+name = input("Enter your name: ")
+print("Hello", name)
+
+
+⚠️ Important:
+input() always gives string
+
+Example:
+age = input("Enter age: ")
+print(type(age))  # string
+
+Convert to number:
+age = int(input("Enter age: "))
+
+
+      </pre
+          >
+        </li>
+      </ul>
+    </ul>
+    <ul>
+      <li><h1>1️⃣ Arithmetic Operators (Math)</h1></li>
+      <ul>
+        <li>
+          <pre>
+Used for calculations.
+
+| Operator | Meaning             | Example   | Result |
+| -------- | ------------------- | --------- | ------ |
+| `+`      | Addition            | `5 + 3`   | `8`    |
+| `-`      | Subtraction         | `5 - 3`   | `2`    |
+| `*`      | Multiplication      | `5 * 3`   | `15`   |
+| `/`      | Division            | `10 / 2`  | `5.0`  |
+| `%`      | Modulus (remainder) | `10 % 3`  | `1`    |
+| `//`     | Floor division      | `10 // 3` | `3`    |
+| `**`     | Power               | `2 ** 3`  | `8`    |
+
+
+Example:
+
+a = 10
+b = 3
+
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(a % b)
+          </pre>
+        </li>
+      </ul>
+      <li><h1>2️⃣ Assignment Operators</h1></li>
+      <ul>
+        <li>
+          <pre>
+Used to assign values.
+x = 10
+x += 5   # x = x + 5
+x -= 3   # x = x - 3
+
+Example:
+x = 10
+x += 2
+print(x)   # 12
+
+
+
+
+        </pre
+          >
+        </li>
+      </ul>
+      <li><h1>3️⃣ Comparison Operators (Yes / No result)</h1></li>
+      <ul>
+        <li>
+          <pre>
+These give True or False.
+| Operator | Meaning          | Example  |
+| -------- | ---------------- | -------- |
+| `==`     | Equal to         | `5 == 5` |
+| `!=`     | Not equal        | `5 != 3` |
+| `>`      | Greater than     | `5 > 3`  |
+| `<`      | Less than        | `5 < 3`  |
+| `>=`     | Greater or equal | `5 >= 5` |
+| `<=`     | Less or equal    | `5 <= 4` |
+
+Example:
+a = 10
+b = 5
+
+print(a > b)   # True
+print(a == b)  # False
+
+
+
+      </pre
+          >
+        </li>
+      </ul>
+      <ul>
+        <li><h1>4️⃣ Logical Operators (Combine conditions)</h1></li>
+        <ul>
+          <li>
+            <pre>
+| Operator | Meaning           |
+| -------- | ----------------- |
+| `and`    | Both must be True |
+| `or`     | Any one True      |
+| `not`    | Reverse result    |
+
+Example:
+age = 20
+
+print(age > 18 and age < 25)   # True
+print(age < 18 or age > 60)    # False
+print(not(age > 18))           # False
+
+
+🧠 Mini Practice (Do it)
+a = 15
+b = 4
+
+
+1️⃣ Add a and b
+2️⃣ Find remainder
+3️⃣ Check if a is greater than b
+4️⃣ Use and operator
+
+          </pre
+            >
+          </li>
+        </ul>
+        <li><h1>📘 Lesson 9: if – else (Decision Making)</h1></li>
+        <ul>
+          <li>
+            <pre>
+Python can make decisions.
+
+👉 Real life example
+
+If rain → take umbrella
+Else → go normally
+
+Basic if
+age = 20
+
+if age >= 18:
+    print("You are eligible to vote")
+
+
+    ⚠️ Indentation is VERY important in Python
+            (4 spaces or one tab)
+
+
+if – else
+
+age = 15
+
+if age >= 18:
+    print("You can vote")
+else:
+    print("You cannot vote")
+
+
+
+if – elif – else
+
+marks = 75
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 60:
+    print("Grade B")
+else:
+    print("Grade C")
+
+
+
+Taking input + if
+
+
+age = int(input("Enter age: "))
+
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+
+
+
+    ❌ Common Mistakes (Freshers do this)
+❌ Wrong:
+if age = 18:   # ❌
+✔ Correct: 
+if age == 18:
+
+
+
+Even–Odd example hint:
+
+num = int(input("Enter number: "))
+if num % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+
+
+        </pre
+            >
+          </li>
+        </ul>
+      </ul>
+    </ul>
+    <ul>
+      <li><h1>📘 Lesson 10: Loops (for & while)</h1></li>
+      <ul>
+        <li>
+          <pre>
+Loops are used to repeat work automatically.
+👉 Why do we need loops?
+Without loop ❌:
+print("Hello")
+print("Hello")
+print("Hello")
+print("Hello")
+print("Hello")
+
+
+With loop ✅:
+for i in range(5):
+    print("Hello")
+
+👉 Less code, more power.
+
+<h1>1️⃣ for Loop (Most used by beginners)</h1>
+
+Basic structure
+            for variable in range(start, end):
+                code
+
+                
+Example 1: Print numbers 1 to 5
+for i in range(1, 6):
+    print(i)
+Output:
+1
+2
+3
+4
+5
+
+
+👉 range(1,6) means:
+
+start = 1
+
+end = 6 (not included)
+
+Example 2: Print your name 3 times
+for i in range(3):
+    print("Bhavesh")
+
+
+Example 3: Sum of numbers 1 to 5
+    total = 0
+
+for i in range(1, 6):
+    total = total + i
+
+print(total)
+
+
+<h2>2️⃣ while Loop</h2>
+Used when you don’t know how many times loop will run.
+Basic structure
+
+while condition:
+    code
+
+ Example 1: Print 1 to 5
+ 
+ i = 1
+
+while i <= 5:
+    print(i)
+    i = i + 1
+
+    ⚠️ Without i = i + 1 → infinite loop ❌
+
+
+    Example 2: Password check
+
+    password = ""
+
+while password != "python123":
+    password = input("Enter password: ")
+
+print("Access granted")
+
+
+<h2>🔁 Loop Control Statements</h2>
+  for i in range(1, 10):
+    if i == 5:
+        break
+    print(i)
+
+
+    1
+2
+3
+4
+
+
+<h2>continue (skip current step)</h2>
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)
+
+    <h2>📘 Lesson 11: Nested Loops (Basic)</h2>
+    Loop inside another loop.
+
+    for i in range(1, 4):
+    for j in range(1, 4):
+        print(i, j)
+
+
+        <h2>📘 Lesson 12: Pattern Printing (Beginner Favourite ⭐)</h2>
+        Example 1:
+*
+* *
+* * *
+
+for i in range(1, 4):
+    for j in range(i):
+        print("*", end=" ")
+    print()
+
+</pre>
+        </li>
+      </ul>
+    </ul>
+    <ul>
+      <li>
+        <h1>📘 Lesson 13: Lists (Very Important)</h1>
+        <ul>
+          <li>
+            <pre>
+A list is used to store multiple values in one variable.
+
+1️⃣ Creating a List
+
+numbers = [1, 2, 3, 4, 5]
+names = ["Bhavesh", "Amit", "Neha"]
+mixed = [1, "Hello", True, 3.5]
+
+
+2️⃣ Accessing List Items (Index)
+
+names = ["Bhavesh", "Amit", "Neha"]
+
+print(names[0])  # Bhavesh
+print(names[1])  # Amit
+print(names[2])  # Neha
+
+
+Negative Index
+print(names[-1])  # Neha
+
+
+3️⃣ Modifying List Items
+
+numbers = [10, 20, 30]
+
+numbers[1] = 25
+print(numbers)
+
+
+Output: [10, 25, 30]
+
+4️⃣ List Length
+numbers = [1, 2, 3, 4]
+print(len(numbers))  # 4
+
+
+5️⃣ Loop Through List
+
+fruits = ["apple", "banana", "mango"]
+
+for fruit in fruits:
+    print(fruit)
+
+Using index
+for i in range(len(fruits)):
+    print(fruits[i])
+
+
+6️⃣ Common List Methods (Very Important)
+add item
+numbers.append(40)
+
+
+insert at position
+numbers.insert(1, 15)
+
+
+remove item
+numbers.remove(20)
+
+
+remove last item
+numbers.pop()
+
+
+sort list
+numbers.sort()
+
+reverse list
+numbers.reverse()
+
+Example Program (Real Use)
+marks = []
+
+for i in range(5):
+    m = int(input("Enter marks: "))
+    marks.append(m)
+
+print("All marks:", marks)
+print("Highest:", max(marks))
+print("Lowest:", min(marks))
+
+
+
+📘 Lesson 14: Tuple (Short Intro)
+Tuple is like list, but cannot be changed.
+colors = ("red", "green", "blue")
+
+
+❌ Cannot modify:
+colors[0] = "black"  # Error
+
+    
+
+      </pre
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul>
+      <li><h1>📘 Lesson 15: Dictionary (Very Important)</h1></li>
+      <ul>
+        <li>
+          <pre>
+A dictionary stores data in key : value pairs
+👉 Just like a real dictionary
+
+👉 Why Dictionary?
+List stores values:
+["Bhavesh", 22, "India"]
+
+
+Dictionary stores meaning:
+{
+  "name": "Bhavesh",
+  "age": 22,
+  "country": "India"
+}
+
+
+1️⃣ Creating a Dictionary
+student = {
+    "name": "Bhavesh",
+    "age": 22,
+    "course": "Python"
+}
+
+
+2️⃣ Accessing Values
+print(student["name"])
+print(student["age"])
+
+✔ Best way (safe):
+print(student.get("course"))
+
+
+3️⃣ Modifying Dictionary
+student["age"] = 23
+student["city"] = "Ahmedabad"
+
+
+4️⃣ Removing Data
+student.pop("city")
+
+5️⃣ Looping Through Dictionary
+for key in student:
+    print(key)
+
+
+Values
+for value in student.values():
+    print(value)
+
+
+Key + Value
+for key, value in student.items():
+    print(key, ":", value)
+
+📘 Real Example: Student Record
+
+student = {}
+
+student["name"] = input("Enter name: ")
+student["roll"] = int(input("Enter roll: "))
+student["marks"] = int(input("Enter marks: "))
+
+if student["marks"] >= 40:
+    student["result"] = "Pass"
+else:
+    student["result"] = "Fail"
+
+print(student)
+
+
+
+❌ Common Fresher Mistakes
+❌ Accessing wrong key:
+print(student["phone"])  # Error
+
+✔ Use:
+print(student.get("phone"))
+
+
+
+        </pre
+          >
+        </li>
+      </ul>
+    </ul>
+    <ul>
+      <li><h1>📘 Lesson 16: Functions (MOST IMPORTANT 🔥)</h1></li>
+      <ul>
+        <li>
+          <pre>
+Functions are reusable blocks of code.
+
+👉 Why Functions?
+Without function ❌:
+print("Welcome")
+print("Welcome")
+
+
+With function ✅:
+def welcome():
+    print("Welcome")
+
+welcome()
+welcome()
+
+
+1️⃣ Creating a Function
+def greet():
+    print("Hello User")
+
+Call it:
+greet()
+
+
+2️⃣ Function with Parameters
+def greet(name):
+    print("Hello", name)
+
+greet("Bhavesh")
+greet("Amit")
+
+
+3️⃣ Function with Return Value
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)
+
+
+4️⃣ Example: Even or Odd Function
+def check_even(num):
+    if num % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
+
+print(check_even(10))
+
+
+
+
+
+        </pre
+          >
+        </li>
+      </ul>
+    </ul>
+
+    <ul>
+      <li><h1>📘 Lesson 17: Modules (Using Other People’s Code)</h1></li>
+      <ul>
+        <li>
+          <pre>
+A module is a file that contains ready-made functions.
+👉 Python already has many built-in modules.
+
+1️⃣ Using a Module
+Example: math module
+
+import math
+
+print(math.sqrt(16))
+print(math.factorial(5))
+
+
+Import only what you need
+from math import sqrt
+
+print(sqrt(25))
+
+
+2️⃣ random Module (Very Useful)
+import random
+
+print(random.randint(1, 10))
+
+
+Random choice:
+colors = ["red", "green", "blue"]
+print(random.choice(colors))
+
+
+3️⃣ datetime Module
+import datetime
+
+now = datetime.datetime.now()
+print(now)
+
+
+
+        </pre
+          >
+        </li>
+      </ul>
+    </ul>
+    <ul>
+      <li><h1>📘 Lesson 18: File Handling (Beginner Level)</h1></li>
+      <ul>
+        <li>
+          <pre>
+Used to read/write data in files.
+
+Writing to a File
+file = open("data.txt", "w")
+file.write("Hello Python")
+file.close()
+
+
+Reading from a File
+file = open("data.txt", "r")
+print(file.read())
+file.close()
+
+
+Better way (Recommended ✅)
+with open("data.txt", "r") as file:
+    print(file.read())
+
+
+
+
+</pre
+          >
+        </li>
+      </ul>
+    </ul>
+    <ul>
+      <li><h1>📘 Lesson 19: Exception Handling (Avoid Crashes)</h1></li>
+      <ul>
+        <li>
+          <pre>
+Handle errors properly.
+Without try-except ❌
+print(10 / 0)
+
+Program crashes.
+
+With try-except ✅
+try:
+    print(10 / 0)
+except:
+    print("Error occurred")
+
+Specific Error
+try:
+    x = int(input("Enter number: "))
+except ValueError:
+    print("Please enter number only")
+
+
+📘 Lesson 20: Mini Project (Beginner Friendly ⭐)
+🎯 Project: Simple Calculator
+
+def add(a, b):
+    return a + b
+
+def sub(a, b):
+    return a - b
+
+def mul(a, b):
+    return a * b
+
+def div(a, b):
+    if b == 0:
+        return "Cannot divide by zero"
+    return a / b
+
+print("1. Add")
+print("2. Subtract")
+print("3. Multiply")
+print("4. Divide")
+
+choice = input("Choose operation: ")
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+if choice == "1":
+    print(add(a, b))
+elif choice == "2":
+    print(sub(a, b))
+elif choice == "3":
+    print(mul(a, b))
+elif choice == "4":
+    print(div(a, b))
+else:
+    print("Invalid choice")
+
+
+    
+
+
+
+</pre
+          >
+        </li>
+      </ul>
+    </ul>
+  </body>
+</html>

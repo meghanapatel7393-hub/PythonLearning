@@ -1,0 +1,18 @@
+<form action="/upload-image" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="token" value="{{ token }}" />
+  <input type="file" name="image" required />
+  <button type="submit">Upload</button>
+</form>
+<h1 style="color: red">
+  this form can not send jwt token so we can not upload image from this form
+</h1>
+{% if file %}
+<p>Image uploaded: {{ file }}</p>
+{% endif %}
+<h2>Welcome {{ user.name }}</h2>
+<p>Email: {{ user.email }}</p>
+
+<p><b>JWT Token:</b></p>
+<textarea rows="4" cols="80">{{ token }}</textarea>
+
+<a href="/">Logout</a>
